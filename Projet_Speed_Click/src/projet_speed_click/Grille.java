@@ -129,10 +129,17 @@ public class Grille {
     public int getScore() {
         return score;
     }
-
+    /**
+    * Modifie le score actuel de la grille avec la valeur spécifiée.
+    *
+    * @param nouveauScore Le nouveau score à définir.
+    */
     public void setScore(int nouveauScore) {
         this.score = nouveauScore;
     }
+    /**
+    * Diminue le score actuel de la grille d'une unité.
+    */
     public void decrementerScore() {
         score--;
     }
