@@ -25,10 +25,11 @@ public class FenetreJeu extends javax.swing.JFrame {
 
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
-                CelluleGraphique bouton_cellule = new CelluleGraphique(grille.getMatriceBoutons()[i][j], 36, 36);
+                CelluleGraphique bouton_cellule = new CelluleGraphique(grille.getMatriceBoutons()[i][j], 36, 36, i, j);
                 PanneauGrille.add(bouton_cellule);
-            }
-        }
+    }
+}
+
 
         initialiserPartie();
     }
