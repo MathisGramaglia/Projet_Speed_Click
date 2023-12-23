@@ -13,7 +13,10 @@ package speedclick_star_wars;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.Random;
-
+/**
+ * Gestionnaire du jeu SpeedClick - Édition Star Wars.
+ * Gère la logique du jeu, notamment l'allumage aléatoire des boutons, la gestion du score et le chronomètre.
+ */
 public class GameManager {
     private boolean[][] litButtons = new boolean[3][3];
     private int score = 0;
@@ -32,7 +35,9 @@ public class GameManager {
         initializeTimer();
         lightUpRandomButton();
     }
-
+    /**
+     * Initialise et démarre le chronomètre du jeu.
+     */
     private void initializeTimer() {
         timer = new Timer(10000, (ActionEvent e) -> {
             timer.stop();
@@ -56,7 +61,9 @@ public class GameManager {
         }
         lightUpRandomButton();
     }
-
+    /**
+     * Allume un bouton de manière aléatoire sur la grille.
+     */
     private void lightUpRandomButton() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -97,4 +104,3 @@ public class GameManager {
         initializeTimer();
     }
 }
-
