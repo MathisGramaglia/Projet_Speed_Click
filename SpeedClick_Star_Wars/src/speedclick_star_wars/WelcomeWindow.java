@@ -4,14 +4,22 @@
  */
 package speedclick_star_wars;
 /**
- *
- * @author mathi
+ * Fenêtre de bienvenue du jeu Speed Click.
+ * Cette classe représente la fenêtre de bienvenue du jeu Speed Click, qui accueille les joueurs
+ * et propose un bouton "Jouer" pour démarrer le jeu.
+ * 
+ * @author Mathi
+ * @version 1.0
  */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class WelcomeWindow extends JFrame {
+    /**
+     * Constructeur de la fenêtre de bienvenue.
+     * Initialise le titre, la mise en page, le label de bienvenue et le bouton "Jouer".
+     */
     public WelcomeWindow() {
         setTitle("Bienvenue sur Speed Click");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,3 +39,4 @@ public class WelcomeWindow extends JFrame {
         add(playButton, BorderLayout.SOUTH);
     }
 }
+
