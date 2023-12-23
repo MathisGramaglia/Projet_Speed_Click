@@ -4,14 +4,22 @@
  */
 package speedclick_star_wars;
 /**
- *
- * @author mathi
+ * Fenêtre principale du jeu SpeedClick.
+ * Cette classe représente la fenêtre principale du jeu SpeedClick, qui contient le panneau de jeu (GamePanel)
+ * et un bouton "Quitter" permettant de quitter le jeu.
+ * 
+ * @author Mathi
+ * @version 1.0
  */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class GameWindow extends JFrame {
+    /**
+     * Constructeur de la fenêtre du jeu SpeedClick.
+     * Initialise le titre, la mise en page, le panneau de jeu, le gestionnaire de jeu et le bouton "Quitter".
+     */
     public GameWindow() {
         setTitle("Speed Click");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
