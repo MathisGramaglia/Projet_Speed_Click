@@ -4,13 +4,21 @@
  */
 package speedclick_star_wars;
 /**
- *
- * @author mathi
+ * Fenêtre de fin de jeu.
+ * Cette classe crée une fenêtre Swing affichant un message de fin de jeu et un bouton "Quitter".
+ * 
+ * @author Mathi
+ * @version 1.0
  */
 import java.awt.BorderLayout;
 import javax.swing.*;
 
 public class FinalWindow extends JFrame {
+    /**
+     * Constructeur de la fenêtre de fin de jeu.
+     * 
+     * @param message Le message à afficher dans la fenêtre.
+     */
     public FinalWindow(String message) {
         setTitle("Fin du Jeu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,3 +34,4 @@ public class FinalWindow extends JFrame {
         add(exitButton, BorderLayout.SOUTH);
     }
 }
+
