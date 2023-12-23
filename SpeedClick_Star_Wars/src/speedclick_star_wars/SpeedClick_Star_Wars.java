@@ -4,6 +4,8 @@
  */
 package speedclick_star_wars;
 
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author mathi
@@ -14,7 +16,9 @@ public class SpeedClick_Star_Wars {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        SwingUtilities.invokeLater(() -> {
+            WelcomeWindow welcomeWindow = new WelcomeWindow();
+            welcomeWindow.setVisible(true);
+        });
     }
-    
 }
