@@ -4,8 +4,11 @@
  */
 package speedclick_star_wars;
 /**
- *
- * @author mathi
+ * Gestionnaire du jeu SpeedClick.
+ * Cette classe gère la logique du jeu, notamment l'allumage aléatoire des boutons, la gestion du score et le chronomètre.
+ * 
+ * @author Mathi
+ * @version 1.0
  */
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +21,11 @@ public class GameManager {
     private Timer timer;
     private GamePanel gamePanel;
 
+    /**
+     * Constructeur du gestionnaire de jeu.
+     * 
+     * @param gamePanel Le panneau de jeu associé à ce gestionnaire.
+     */
     public GameManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         lightUpRandomButton();
@@ -33,6 +41,13 @@ public class GameManager {
         timer.start();
     }
 
+    /**
+     * Gère le clic sur un bouton de jeu.
+     * Augmente le score si le bouton est allumé, sinon diminue le score.
+     * 
+     * @param row La ligne du bouton cliqué.
+     * @param col La colonne du bouton cliqué.
+     */
     public void handleButtonClick(int row, int col) {
         if (litButtons[row][col]) {
             score++;
@@ -53,17 +68,33 @@ public class GameManager {
         litButtons[row][col] = true;
     }
 
+    /**
+     * Vérifie si un bouton spécifique est allumé.
+     * 
+     * @param row La ligne du bouton à vérifier.
+     * @param col La colonne du bouton à vérifier.
+     * @return true si le bouton est allumé, sinon false.
+     */
     public boolean isButtonLit(int row, int col) {
         return litButtons[row][col];
     }
 
+    /**
+     * Obtient le score actuel du jeu.
+     * 
+     * @return Le score actuel.
+     */
     public int getScore() {
         return score;
     }
+
+    /**
+     * Réinitialise le jeu en remettant le score à zéro, en allumant un bouton aléatoire et en réinitialisant le chronomètre.
+     */
     public void resetGame() {
-    score = 0;
-    lightUpRandomButton(); 
-    initializeTimer();
-}
+        score = 0;
+        lightUpRandomButton(); 
+        initializeTimer();
+    }
 }
 
