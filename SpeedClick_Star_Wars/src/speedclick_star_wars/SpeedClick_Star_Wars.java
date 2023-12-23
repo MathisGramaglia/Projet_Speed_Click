@@ -4,16 +4,22 @@
  */
 package speedclick_star_wars;
 
+/**
+ * Classe principale pour le jeu SpeedClick Star Wars.
+ * Cette classe contient le point d'entrée de l'application et initialise la fenêtre d'accueil (WelcomeWindow).
+ * 
+ * @author Mathi
+ * @version 1.0
+ */
+
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author mathi
- */
 public class SpeedClick_Star_Wars {
 
     /**
-     * @param args the command line arguments
+     * Méthode principale de l'application, qui initialise la fenêtre d'accueil (WelcomeWindow) et la rend visible.
+     * 
+     * @param args les arguments de ligne de commande (non utilisés)
      */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -22,3 +28,4 @@ public class SpeedClick_Star_Wars {
         });
     }
 }
+
