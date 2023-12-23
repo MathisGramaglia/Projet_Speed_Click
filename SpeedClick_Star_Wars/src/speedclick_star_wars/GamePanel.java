@@ -4,34 +4,50 @@
  */
 package speedclick_star_wars;
 /**
- *
- * @author mathi
+ * Panneau de jeu pour le jeu SpeedClick.
+ * Cette classe représente le panneau de jeu qui contient les boutons et le score du jeu SpeedClick.
+ * 
+ * @author Mathi
+ * @version 1.0
  */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+
+import javax.swing.JOptionPane;
+
+import javax.swing.JOptionPane;
 
 public class GamePanel extends JPanel {
     private GameManager gameManager;
     private JButton[][] buttons = new JButton[3][3];
     private JLabel scoreLabel;
 
+    /**
+     * Constructeur du panneau de jeu.
+     * Initialise la mise en page du panneau, le label du score et les boutons.
+     */
     public GamePanel() {
         setLayout(new BorderLayout());
         initializeScoreLabel();
         initializeButtons();
     }
 
+    /**
+     * Définit le gestionnaire de jeu associé à ce panneau.
+     * 
+     * @param gameManager Le gestionnaire de jeu.
+     */
     public void setGameManager(GameManager gameManager) {
         this.gameManager = gameManager;
-        updateButtonStates(); 
+        updateButtonStates();
     }
 
     private void initializeScoreLabel() {
         scoreLabel = new JLabel("Score: 0", SwingConstants.CENTER);
         add(scoreLabel, BorderLayout.NORTH);
     }
-    
 
     private void initializeButtons() {
         JPanel gridPanel = new JPanel(new GridLayout(3, 3));
@@ -52,6 +68,9 @@ public class GamePanel extends JPanel {
         add(gridPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Met à jour l'état des boutons en fonction de l'état du jeu (allumé ou éteint).
+     */
     public void updateButtonStates() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -64,11 +83,17 @@ public class GamePanel extends JPanel {
         }
     }
 
+    /**
+     * Met à jour le score affiché dans le label.
+     */
     public void updateScore() {
         scoreLabel.setText("Score: " + gameManager.getScore());
     }
 
-     public void timeUp() {
+    /**
+     * Gère la fin du temps de jeu en affichant un message de fin et en proposant de rejouer ou de quitter le jeu.
+     */
+    public void timeUp() {
         int option = JOptionPane.showConfirmDialog(this, "Temps écoulé! Votre score est : " + gameManager.getScore() + "\nVoulez-vous rejouer ?", "Fin de la partie", JOptionPane.YES_NO_OPTION);
         if (option == JOptionPane.YES_OPTION) {
             gameManager.resetGame();
